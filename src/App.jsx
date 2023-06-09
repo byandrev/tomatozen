@@ -1,10 +1,11 @@
-import { Heading } from "@chakra-ui/react";
+import { Container } from "@chakra-ui/react";
+import Header from "./components/Header";
 
 function App() {
   return (
-    <>
-      <Heading>TomatoZen</Heading>
-    </>
+    <Container>
+      <Header />
+    </Container>
   );
 }
 
