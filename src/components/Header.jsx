@@ -14,7 +14,7 @@ function Header() {
   return (
     <Box as="header" py={10}>
       <Flex justifyContent="space-between" alignItems="center">
-        <Heading size="md" color="brand.light" colorScheme="white">
+        <Heading size="lg" color="brand.light" colorScheme="white">
           TomatoZen
         </Heading>
         <Stack direction="row" spacing={2}>
