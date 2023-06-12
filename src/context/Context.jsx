@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { createContext } from "react";
 import PropTypes from "prop-types";
 import useLocalStorage from "../hooks/useLocalStorage";
+import setTitle from "../utils/title";
 
 export const Context = createContext();
 
@@ -42,6 +43,7 @@ export default function ContextProvider({ children }) {
 
       if (secondsRemaining < 10) secondsRemaining = '0' + secondsRemaining;
       setTimeDisplay(minutesRemaining + ":" + secondsRemaining);
+      setTitle(minutesRemaining+":"+secondsRemaining);
 
       seconds--;
 
