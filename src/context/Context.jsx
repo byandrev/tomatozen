@@ -1,18 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { createContext } from "react";
 import PropTypes from "prop-types";
+import useLocalStorage from "../hooks/useLocalStorage";
 
 export const Context = createContext();
 
 export default function ContextProvider({ children }) {
   const [isFocus, setIsFocus] = useState(true);
-  const [counter, setCounter] = useState(1);
+  const [counter, setCounter] = useState(null);
   const [time, setTime] = useState(null);
-  const [timeFocus, setTimeFocus] = useState(1);
-  const [timeBreak, setTimeBreak] = useState(5);
+  const [timeFocus, setTimeFocus] = useState(0.5);
+  const [timeBreak, setTimeBreak] = useState(0.5);
   const [timeDisplay, setTimeDisplay] = useState(`${timeFocus}:00`);
   const [intervalId, setIntervalId] = useState(0);
   const [running, setRunning] = useState(false);
+  const { savePomodoro, getPomodoro } = useLocalStorage();
 
   const getTimeInSeg = (time) => {
     const splited = time.split(":");
@@ -69,6 +71,15 @@ export default function ContextProvider({ children }) {
     startTimer(true);
   }
 
+  useEffect(() => {
+    const ans = getPomodoro();
+    if (ans) setCounter(ans);
+  }, [getPomodoro]);
+
+  useEffect(() => {
+    if (counter) savePomodoro(counter);
+  }, [counter, savePomodoro]);
+
   const value = {
     counter,
     isFocus,
@@ -81,6 +92,7 @@ export default function ContextProvider({ children }) {
     running,
     setRunning,
     restartTimer,
+    setCounter,
   };
 
   return <Context.Provider value={value}>{children}</Context.Provider>;
