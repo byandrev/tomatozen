@@ -9,8 +9,8 @@ export default function ContextProvider({ children }) {
   const [isFocus, setIsFocus] = useState(true);
   const [counter, setCounter] = useState(null);
   const [time, setTime] = useState(null);
-  const [timeFocus, setTimeFocus] = useState(0.5);
-  const [timeBreak, setTimeBreak] = useState(0.5);
+  const [timeFocus, setTimeFocus] = useState(25);
+  const [timeBreak, setTimeBreak] = useState(5);
   const [timeDisplay, setTimeDisplay] = useState(`${timeFocus}:00`);
   const [intervalId, setIntervalId] = useState(0);
   const [running, setRunning] = useState(false);

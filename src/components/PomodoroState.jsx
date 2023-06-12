@@ -1,12 +1,25 @@
-import { Stack, Button, Text } from "@chakra-ui/react";
+import { Flex, Stack, Button, Text, Icon } from "@chakra-ui/react";
+import { RiRestartLine } from "react-icons/ri";
 import useTimer from "../hooks/useTimer";
+import usePomodoroCounter from "../hooks/usePomodoroCounter";
 
 function PomodoroState() {
   const { counter, isFocus } = useTimer();
+  const { handleRestartPomodoro } = usePomodoroCounter();
 
   return (
     <>
-      <Text textAlign="center" color="gray.500">Pomodoro #{counter}</Text>
+      <Flex justifyContent="center" alignItems="center" gap={2}>
+        <Text color="gray.500">Pomodoro ${counter}</Text>
+        <Icon
+          color="brand.alt"
+          as={RiRestartLine}
+          fontSize="1rem"
+          cursor="pointer"
+          onClick={handleRestartPomodoro}
+        />
+      </Flex>
+
       <Stack direction="row" justifyContent="center" mb={6}>
         <Button variant="ghost" color={`${isFocus && "brand.base"}`}>
           Focus
