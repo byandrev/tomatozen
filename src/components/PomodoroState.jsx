@@ -10,7 +10,7 @@ function PomodoroState() {
   return (
     <>
       <Flex justifyContent="center" alignItems="center" gap={2}>
-        <Text color="gray.500">Pomodoro ${counter}</Text>
+        <Text color="gray.500">Pomodoro #{counter}</Text>
         <Icon
           color="brand.alt"
           as={RiRestartLine}
