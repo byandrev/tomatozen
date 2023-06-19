@@ -23,7 +23,8 @@ export default function TasksProvider({ children }) {
   };
 
   const addTask = (task) => {
-    setTasks(tasks.concat(task));
+    if (tasks) setTasks(tasks.concat(task));
+    else setTasks([task]);
   };
 
   const updateTask = (index, key, val) => {

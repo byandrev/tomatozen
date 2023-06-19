@@ -34,29 +34,26 @@ function Tasks() {
       </Text>
       <ModalCreateTask isOpen={isOpen} onClose={onClose} />
       <Stack mt={4}>
-        {tasks && (
-          <>
-            {tasks.map((task) => (
-              <TaskElement
-                key={task.id}
-                text={task.text}
-                isCompleted={task.isCompleted}
-                id={task.id}
-                createdAt={task.createdAt}
-                handleCompleted={handleCompleted}
-                handleDelete={handleDeleteTask}
-              />
-            ))}
-            <Button
-              variant="outline"
-              color="gray"
-              borderStyle="dashed"
-              onClick={onOpen}
-            >
-              Add
-            </Button>
-          </>
-        )}
+        {tasks &&
+          tasks.map((task) => (
+            <TaskElement
+              key={task.id}
+              text={task.text}
+              isCompleted={task.isCompleted}
+              id={task.id}
+              createdAt={task.createdAt}
+              handleCompleted={handleCompleted}
+              handleDelete={handleDeleteTask}
+            />
+          ))}
+        <Button
+          variant="outline"
+          color="gray"
+          borderStyle="dashed"
+          onClick={onOpen}
+        >
+          Add
+        </Button>
       </Stack>
     </Box>
   );
