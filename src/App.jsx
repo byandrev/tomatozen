@@ -1,4 +1,4 @@
-import { Container, Divider, Flex, Spacer } from "@chakra-ui/react";
+import { Container, Divider, Flex } from "@chakra-ui/react";
 import Header from "./components/Header";
 import Pomodoro from "./components/Pomodoro";
 import Tasks from "./components/Tasks";
