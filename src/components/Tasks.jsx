@@ -5,14 +5,17 @@ import {
   Stack,
   useDisclosure,
   Text,
+  Flex,
 } from "@chakra-ui/react";
 import useTasks from "../hooks/useTasks";
 import ModalCreateTask from "./ModalCreateTask";
 import TaskElement from "./TaskElement";
+import IconRestart from "./IconRestart";
 
 function Tasks() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { tasks, toggleCompleted, deleteTask, tasksCompleted } = useTasks();
+  const { tasks, toggleCompleted, deleteTask, tasksCompleted, restartTasks } =
+    useTasks();
 
   const handleCompleted = (id) => {
     toggleCompleted(id);
@@ -22,6 +25,10 @@ function Tasks() {
     deleteTask(id);
   };
 
+  const handleRestartTasks = () => {
+    restartTasks();
+  };
+
   return (
     <Box>
       <Box bg="yellow" p={2}>
@@ -29,10 +36,16 @@ function Tasks() {
           Tasks
         </Heading>
       </Box>
-      <Text color="gray" fontSize="sm" textAlign="center" mt={4}>
-        Tasks completed today: {tasksCompleted}
-      </Text>
+
+      <Flex justifyContent="center" alignItems="center" gap={2} mt={4}>
+        <Text color="gray" fontSize="sm" textAlign="center">
+          Tasks completed today: {tasksCompleted || 0}
+        </Text>
+        <IconRestart handleClick={handleRestartTasks} />
+      </Flex>
+
       <ModalCreateTask isOpen={isOpen} onClose={onClose} />
+
       <Stack mt={4}>
         {tasks &&
           tasks.map((task) => (

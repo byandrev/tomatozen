@@ -69,6 +69,7 @@ export default function TasksProvider({ children }) {
     findTask,
     deleteTask,
     tasksCompleted,
+    setTasksCompleted,
   };
 
   return (
