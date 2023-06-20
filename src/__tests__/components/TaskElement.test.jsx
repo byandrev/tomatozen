@@ -1,6 +1,5 @@
-import { fireEvent, render, screen, waitFor } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import TaskElement from "../../components/TaskElement";
-// import userEvent from "@testing-library/user-event";
 
 describe("TaskElement", () => {
   const el = <TaskElement id={1} text={"Task Example"} isCompleted={false} />;
