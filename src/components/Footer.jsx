@@ -1,9 +1,14 @@
-import { Box, Link, Text } from "@chakra-ui/react";
+import { Flex, Link, Text } from "@chakra-ui/react";
 
 function Footer() {
   return (
     <footer>
-      <Box textAlign="center">
+      <Flex
+        justifyContent="space-between"
+        alignItems="center"
+        flexDirection={{ base: "column", md: "row" }}
+        gap={2}
+      >
         <Text>
           Development by{" "}
           <Link
@@ -15,7 +20,18 @@ function Footer() {
             Andres Parra
           </Link>
         </Text>
-      </Box>
+
+        <Text>
+          Collaborate here{" "}
+          <Link
+            href="https://github.com/byandrev/tomatozen"
+            target="_blank"
+            fontWeight="bold"
+          >
+            Github
+          </Link>
+        </Text>
+      </Flex>
     </footer>
   );
 }
