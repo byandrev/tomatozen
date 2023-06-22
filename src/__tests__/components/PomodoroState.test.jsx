@@ -1,5 +1,4 @@
 import { cleanup, render, screen } from "@testing-library/react";
-import renderer from "react-test-renderer";
 import ContextProvider from "../../context/Context";
 import { ChakraProvider } from "@chakra-ui/react";
 import theme from "../../theme";
