@@ -58,6 +58,7 @@ export default function ContextProvider({ children }) {
         setIntervalId(0);
         setRunning(false);
         setTimeDisplay(`${timeBreak}:00`);
+        setTime(null);
         return;
       }
     }, 1000);
