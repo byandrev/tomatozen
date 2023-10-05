@@ -49,6 +49,9 @@ Thank you for considering contributing to our project! We welcome contributions 
 
 If you have any questions or need further information, feel free to contact us via [twitter](https://www.twitter.com/byandrev).
 
+## Contributors
+- Mauricio Di Donato Sanchez
+
 ## License
 
 This project is licensed under the [GNU General Public License (GPL)](https://www.gnu.org/licenses/gpl-3.0.html). Please see the [LICENSE](LICENSE) file for more information on the terms and conditions of use.
