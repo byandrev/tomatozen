@@ -50,6 +50,7 @@ Thank you for considering contributing to our project! We welcome contributions 
 If you have any questions or need further information, feel free to contact us via [twitter](https://www.twitter.com/byandrev).
 
 ## Contributors
+- Andres Parra
 - Mauricio Di Donato Sanchez
 
 ## License
