@@ -1,9 +1,27 @@
 import { Button, Flex } from "@chakra-ui/react";
-import { FaPlay, FaPause, FaUndoAlt } from "react-icons/fa";
+import { FaPause, FaPlay, FaUndoAlt } from "react-icons/fa";
+
+import useAudio from "../hooks/useAudio";
 import useTimer from "../hooks/useTimer";
 
 function PomodoroActions() {
   const { handleStart, handleStop, handleRestart } = useTimer();
+  const { toggle } = useAudio("/click.wav");
+
+  const handleClickStart = () => {
+    toggle();
+    handleStart();
+  };
+
+  const handleClickRestart = () => {
+    toggle();
+    handleRestart();
+  };
+
+  const handleClickStop = () => {
+    toggle();
+    handleStop();
+  };
 
   return (
     <Flex justifyContent="center">
@@ -13,7 +31,7 @@ function PomodoroActions() {
         leftIcon={<FaUndoAlt />}
         iconSpacing={0}
         fontSize="2rem"
-        onClick={handleRestart}
+        onClick={handleClickRestart}
       ></Button>
       <Button
         variant="ghost"
@@ -21,7 +39,7 @@ function PomodoroActions() {
         leftIcon={<FaPlay />}
         iconSpacing={0}
         fontSize="2rem"
-        onClick={handleStart}
+        onClick={handleClickStart}
       ></Button>
       <Button
         variant="ghost"
@@ -29,7 +47,7 @@ function PomodoroActions() {
         leftIcon={<FaPause />}
         iconSpacing={0}
         fontSize="2rem"
-        onClick={handleStop}
+        onClick={handleClickStop}
       ></Button>
     </Flex>
   );
