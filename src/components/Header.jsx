@@ -27,7 +27,7 @@ function Header() {
           ></Button>
           <Button
             variant="ghost"
-            colorScheme="red"
+            colorScheme="gray"
             leftIcon={<SettingsIcon />}
             iconSpacing={0}
           ></Button>
