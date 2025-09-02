@@ -12,7 +12,7 @@ function Footer() {
         <Text>
           Development by{" "}
           <Link
-            href="https://byandrev-blog.vercel.app"
+            href="https://byandrev.dev"
             target="_blank"
             color="brand.base"
             fontWeight="bold"
